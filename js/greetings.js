@@ -1,6 +1,7 @@
 const logInForm = document.querySelector("#login-form");
 const logInInput = document.querySelector("#login-form input");
 const greetings = document.querySelector("h1.greetings");
+const most = document.querySelector(".most");
 const date = new Date();
 let vtg = "";
 
@@ -17,6 +18,7 @@ function onLogInSubmit(doNotBasicPlay)
 
   localStorage.setItem(USERNAME_KEY, logInInputValue);
   logInForm.classList.add(HIDDEN_CLASSNAME);
+  most.classList.remove(HIDDEN_CLASSNAME);
   appearGreetings(logInInputValue);
 }
 
@@ -54,4 +56,5 @@ if(username == null)
 } else
 {
   appearGreetings(username);
+  most.classList.remove(HIDDEN_CLASSNAME);
 }
